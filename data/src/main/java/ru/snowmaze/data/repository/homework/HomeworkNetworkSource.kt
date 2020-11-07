@@ -1,7 +1,7 @@
 package ru.snowmaze.data.repository.homework
 
 import ru.snowmaze.data.entity.HomeworkEntity
-import ru.snowmaze.data.repository.utils.DateHelper
+import ru.snowmaze.data.utils.DateHelper
 
 class HomeworkNetworkSource : HomeworkSource {
 

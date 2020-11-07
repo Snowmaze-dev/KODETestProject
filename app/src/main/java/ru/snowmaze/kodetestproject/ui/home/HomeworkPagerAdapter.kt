@@ -31,7 +31,7 @@ class HomeworkPagerAdapter(context: Context) :
 
         fun bind(homework: Homework) {
             with(binding) {
-                lessonAndName.text = homework.lesson.name
+                lessonAndTime.text = homework.lesson.name
                 task.text = homework.task
             }
         }

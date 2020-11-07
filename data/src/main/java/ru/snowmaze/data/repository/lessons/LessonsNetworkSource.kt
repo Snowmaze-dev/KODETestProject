@@ -1,6 +1,6 @@
 package ru.snowmaze.data.repository.lessons
 
-import ru.snowmaze.data.repository.utils.DateHelper
+import ru.snowmaze.data.utils.DateHelper
 import ru.snowmaze.domain.Lesson
 
 class LessonsNetworkSource: LessonsSource {

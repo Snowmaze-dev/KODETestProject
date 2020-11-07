@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import ru.snowmaze.data.repository.utils.DateHelper
+import ru.snowmaze.data.utils.DateHelper
 import ru.snowmaze.domain.Homework
 import ru.snowmaze.domain.Lesson
 import ru.snowmaze.kodetestproject.databinding.ClassCardBinding

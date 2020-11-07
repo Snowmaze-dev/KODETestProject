@@ -7,6 +7,6 @@ interface LessonsRepository {
 
     fun lessons(): Flow<Result<List<Lesson>>>
 
-    fun lesson(id: Int): Flow<Result<Lesson>>
+    suspend fun lesson(id: Int): Lesson?
 
 }

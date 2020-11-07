@@ -11,9 +11,6 @@ class LessonsRepository(private val lessonsSourceProvider: LessonsSourceProvider
         emit(Result.success(lessonsSourceProvider.lessonsSource().lessons()))
     }
 
-    override fun lesson(id: Int) = flow<Result<Lesson>> {
-        emit(lessonsSourceProvider.lessonsSource().lesson(id)?.let { Result.success(it) }
-            ?: Result.failure(RuntimeException("This lesson doesn't exist")))
-    }
+    override suspend fun lesson(id: Int) = lessonsSourceProvider.lessonsSource().lesson(id)
 
 }

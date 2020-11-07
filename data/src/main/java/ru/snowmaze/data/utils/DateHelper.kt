@@ -1,4 +1,4 @@
-package ru.snowmaze.data.repository.utils
+package ru.snowmaze.data.utils
 
 import java.text.SimpleDateFormat
 import java.util.*
