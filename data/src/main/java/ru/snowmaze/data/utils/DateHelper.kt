@@ -5,9 +5,9 @@ import java.util.*
 
 object DateHelper {
 
-    val dayFormat = SimpleDateFormat("yyyy-MM-dd", Locale.ROOT)
+    val dayFormat = SimpleDateFormat("dd-MM-yyyy", Locale.ROOT)
 
-    val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ROOT)
+    val dateFormat = SimpleDateFormat("dd-MM-yyyy HH:mm:ss", Locale.ROOT)
 
     val today = SimpleDateFormat("HH:mm", Locale.ROOT)
 

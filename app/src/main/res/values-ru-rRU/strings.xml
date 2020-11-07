@@ -7,4 +7,5 @@
     <string name="homework">Домашняя работа</string>
     <string name="classes_today">%1$s уроков сегодня</string>
     <string name="connection_failed">Не удалось подключится к серверу</string>
+    <string name="homework_days_left">%1$s дней осталось</string>
 </resources>
