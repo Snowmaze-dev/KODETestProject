@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1C1D21</color>
+    <color name="primaryLighter">#24252A</color>
+    <color name="iconsBackgroundColor">#313131</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hi">Привет</string>
+    <string name="are_you_ready">Ты готов к экзаменам?</string>
+    <string name="classes">Уроки</string>
+    <string name="home">Главная</string>
+    <string name="homework">Домашняя работа</string>
+    <string name="classes_today">%1$s уроков сегодня</string>
+    <string name="connection_failed">Не удалось подключится к серверу</string>
+</resources>
