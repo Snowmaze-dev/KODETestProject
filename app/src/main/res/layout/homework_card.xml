@@ -27,8 +27,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"/>
 
             <FrameLayout
                 android:layout_width="match_parent"
