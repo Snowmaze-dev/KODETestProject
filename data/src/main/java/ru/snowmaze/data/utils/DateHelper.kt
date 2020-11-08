@@ -1,5 +1,6 @@
 package ru.snowmaze.data.utils
 
+import ru.snowmaze.domain.Lesson
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -11,5 +12,6 @@ object DateHelper {
 
     val today = SimpleDateFormat("HH:mm", Locale.ROOT)
 
-
 }
+
+fun Lesson.time() = DateHelper.today.format(time) + " - " + DateHelper.today.format(time + duration)

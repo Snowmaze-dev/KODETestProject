@@ -6,13 +6,13 @@ import androidx.fragment.app.Fragment
 import com.fxn.BubbleTabBar
 import com.fxn.OnBubbleClickListener
 import ru.snowmaze.kodetestproject.R
-import ru.snowmaze.kodetestproject.ui.classes.ClassesFragment
+import ru.snowmaze.kodetestproject.ui.classes.LessonsFragment
 import ru.snowmaze.kodetestproject.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
     private val homeFragment = HomeFragment()
-    private val classesFragment = ClassesFragment()
+    private val classesFragment = LessonsFragment()
     private var previousFragment: Fragment = homeFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openFragment(fragment: Fragment) {
+        if(previousFragment == fragment) return
         supportFragmentManager.beginTransaction()
             .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
             .hide(previousFragment).show(fragment)

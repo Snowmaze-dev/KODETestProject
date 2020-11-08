@@ -12,6 +12,6 @@
         android:id="@+id/classes_fragment"
         android:iconTint="@color/lime"
         android:icon="@drawable/outline_calendar_today_24"
-        android:title="@string/classes" />
+        android:title="@string/lessons" />
 
 </menu>

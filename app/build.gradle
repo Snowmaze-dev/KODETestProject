@@ -46,6 +46,10 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
     implementation project(":timerview")
     implementation project(":data")

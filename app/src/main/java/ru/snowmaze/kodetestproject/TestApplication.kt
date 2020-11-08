@@ -12,10 +12,11 @@ import ru.snowmaze.data.repository.homework.HomeworkNetworkSource
 import ru.snowmaze.data.repository.homework.HomeworkRepository
 import ru.snowmaze.data.repository.homework.HomeworkSource
 import ru.snowmaze.data.repository.homework.HomeworkSourceProvider
-import ru.snowmaze.data.repository.lessons.LessonsRepository
 import ru.snowmaze.data.repository.lessons.LessonsNetworkSource
+import ru.snowmaze.data.repository.lessons.LessonsRepository
 import ru.snowmaze.data.repository.lessons.LessonsSource
 import ru.snowmaze.data.repository.lessons.LessonsSourceProvider
+import ru.snowmaze.kodetestproject.ui.classes.LessonsViewModel
 import ru.snowmaze.kodetestproject.ui.home.HomeViewModel
 import ru.snowmaze.kodetestproject.utils.bindViewModel
 
@@ -42,6 +43,9 @@ class TestApplication : Application(), KodeinAware {
         }
         bindViewModel<HomeViewModel>() with provider {
             HomeViewModel(instance(), instance())
+        }
+        bindViewModel<LessonsViewModel>() with provider {
+            LessonsViewModel(instance())
         }
         bind<ViewModelFactory>() with singleton {
             ViewModelFactory(this)
