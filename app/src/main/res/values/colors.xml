@@ -2,5 +2,7 @@
 <resources>
     <color name="primary">#1C1D21</color>
     <color name="primaryLighter">#24252A</color>
-    <color name="iconsBackgroundColor">#313131</color>
+    <color name="iconsBackground">#313131</color>
+    <color name="lime">#38F187</color>
+    <color name="limeDarker">#05BEB6</color>
 </resources>
