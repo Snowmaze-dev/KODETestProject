@@ -3,6 +3,7 @@ package ru.snowmaze.timerview
 import android.content.Context
 import android.os.CountDownTimer
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -65,22 +66,27 @@ class TimerView @JvmOverloads constructor(
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
+        orientation = VERTICAL
         updateTimerViews()
     }
 
     private fun updateTimerViews() {
         if(timerTextViews.isEmpty()) {
+            val container = LinearLayout(context)
+            container.gravity = Gravity.CENTER_HORIZONTAL
             val layoutInflater = LayoutInflater.from(context)
             for(index in pieces.indices) {
                 val piece = pieces[index]
-                val textView = layoutInflater.inflate(R.layout.text_view, this, false) as TextView
+                val textView = layoutInflater.inflate(R.layout.text_view, container, false) as TextView
                 textView.text = piece
                 timerTextViews.add(textView)
-                addView(textView)
+                container.addView(textView)
                 if (pieces.size - 1 == index || index % 2 == 0) continue
-                val divider = layoutInflater.inflate(R.layout.divider, this, false) as TextView
-                addView(divider)
+                val divider = layoutInflater.inflate(R.layout.divider, container, false) as TextView
+                container.addView(divider)
             }
+            addView(container)
+            addView(layoutInflater.inflate(R.layout.time_layout, this, false))
         }
         else {
             pieces.forEachIndexed { index, piece ->

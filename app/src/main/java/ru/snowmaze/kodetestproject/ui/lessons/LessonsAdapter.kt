@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.github.vipulasri.timelineview.TimelineView
 import ru.snowmaze.data.utils.time
 import ru.snowmaze.domain.Lesson
+import ru.snowmaze.kodetestproject.R
 import ru.snowmaze.kodetestproject.databinding.CardWithTimelineBinding
 import ru.snowmaze.kodetestproject.ui.LessonsAdapterCallback
 
@@ -38,7 +39,7 @@ class LessonsAdapter(context: Context, private val callback: LessonsAdapterCallb
             binding.time.text = lesson.time()
             with(binding.lessonCard) {
                 lessonName.text = lesson.name
-                lessonDescription.text = lesson.description
+                lessonDescription.text = root.context.getString(R.string.teacher, lesson.teacher)
                 skypeCall.setOnClickListener {
                     callback.onSkypeClick(lesson)
                 }

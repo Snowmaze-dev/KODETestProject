@@ -9,4 +9,5 @@
     <string name="connection_failed">Failed to connect to server</string>
     <string name="homework_days_left">%1$s days left</string>
     <string name="open_in">Open in</string>
+    <string name="teacher">Teacher: %1$s</string>
 </resources>

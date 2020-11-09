@@ -9,7 +9,7 @@
         android:title="@string/home" />
 
     <item
-        android:id="@+id/classes_fragment"
+        android:id="@+id/lessons_fragment"
         android:iconTint="@color/lime"
         android:icon="@drawable/outline_calendar_today_24"
         android:title="@string/lessons" />

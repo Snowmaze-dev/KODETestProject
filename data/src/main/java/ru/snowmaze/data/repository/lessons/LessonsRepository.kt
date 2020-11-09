@@ -19,8 +19,13 @@ class LessonsRepository(private val lessonsSourceProvider: LessonsSourceProvider
         emit(Result.success(lessons.map(lessonMapper::mapFromEntity)))
     }
 
-    override suspend fun lesson(id: Int) = lessonsSourceProvider.lessonsSource().lesson(id)?.let {
-        lessonMapper.mapFromEntity(it)
+    override suspend fun lesson(id: Int) = try {
+        lessonsSourceProvider.lessonsSource().lesson(id)?.let {
+            lessonMapper.mapFromEntity(it)
+        }
+    }
+    catch (e: IOException) {
+        null
     }
 
 }

@@ -19,7 +19,7 @@ import ru.snowmaze.data.repository.lessons.LessonsRepository
 import ru.snowmaze.data.repository.lessons.LessonsSource
 import ru.snowmaze.data.repository.lessons.LessonsSourceProvider
 
-val dataModule = Kodein.Module("RetrofitModule") {
+val dataModule = Kodein.Module("DataModule") {
     bind<Retrofit>() with singleton {
         val contentType = "application/json".toMediaType()
         Retrofit.Builder().baseUrl("https://sheet.best/api/sheets/")

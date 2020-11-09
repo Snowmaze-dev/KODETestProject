@@ -7,28 +7,23 @@
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
-    <ScrollView
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragments_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragments_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-    </ScrollView>
 
     <com.fxn.BubbleTabBar
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bubbletab_title_size="14sp"
-        app:bubbletab_menuResource="@menu/bottom_navigation_menu"
-        app:bubbletab_disabled_icon_color="@android:color/white"
         android:background="@drawable/bottom_navigation_background"
         android:padding="10dp"
+        app:bubbletab_disabled_icon_color="@android:color/white"
         app:bubbletab_horizontal_padding="20dp"
+        app:bubbletab_menuResource="@menu/bottom_navigation_menu"
+        app:bubbletab_title_size="14sp"
         app:bubbletab_vertical_padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 
