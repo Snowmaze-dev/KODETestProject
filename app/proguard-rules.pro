@@ -27,3 +27,19 @@
     public static void checkParameterIsNotNull(...);
 }
 -keepattributes *Annotation*, InnerClasses
+-dontnote kotlinx.serialization.AnnotationsKt # core serialization annotations
+
+-keepclassmembers class kotlinx.serialization.json.* {
+    *** Companion;
+}
+-keepclasseswithmembers class kotlinx.serialization.json.* {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+
+-keep,includedescriptorclasses class ru.snowmaze.data.**$$serializer { *; }
+-keepclassmembers class ru.snowmaze.data.* {
+    *** Companion;
+}
+-keepclasseswithmembers class ru.snowmaze.data.* {
+    kotlinx.serialization.KSerializer serializer(...);
+}
