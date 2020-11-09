@@ -36,3 +36,4 @@ fun Context.goToMarket() {
     myIntent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
     startActivity(myIntent)
 }
+

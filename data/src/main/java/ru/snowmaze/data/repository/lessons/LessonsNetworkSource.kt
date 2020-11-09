@@ -1,19 +1,20 @@
 package ru.snowmaze.data.repository.lessons
 
-import ru.snowmaze.data.utils.DateHelper
-import ru.snowmaze.domain.Lesson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import retrofit2.Retrofit
+import ru.snowmaze.data.LessonsAPIService
 
-class LessonsNetworkSource: LessonsSource {
+class LessonsNetworkSource(retrofit: Retrofit): LessonsSource {
 
-    private val lessons = listOf(Lesson(1, "Math", DateHelper.today.parse("08:00").time), Lesson(2, "Physics", DateHelper.today.parse("8:55").time))
+    private val service = retrofit.create(LessonsAPIService::class.java)
 
-    override suspend fun lesson(id: Int): Lesson? { // TODO
-        for(lesson in lessons) {
-            if(lesson.id == id) return lesson
-        }
-        return null
+    override suspend fun lesson(id: Int) = withContext(Dispatchers.IO) {
+        service.getLesson(id).getOrNull(0)
     }
 
-    override suspend fun lessons() = lessons // TODO
+    override suspend fun lessons() = withContext(Dispatchers.IO) {
+        service.getLessons()
+    }
 
 }

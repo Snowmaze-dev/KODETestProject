@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.recyclerview.widget.RecyclerView
+import ru.snowmaze.data.utils.time
 import ru.snowmaze.domain.Lesson
+import ru.snowmaze.kodetestproject.R
 import ru.snowmaze.kodetestproject.databinding.LessonCardBinding
-import ru.snowmaze.kodetestproject.ui.LessonVH
 import ru.snowmaze.kodetestproject.ui.LessonsAdapterCallback
+import ru.snowmaze.kodetestproject.utils.dp
 
 class LessonsPagerAdapter(context: Context, private val callback: LessonsAdapterCallback) :
-    RecyclerView.Adapter<LessonVH>() {
+    RecyclerView.Adapter<LessonsPagerAdapter.LessonVH>() {
 
     var lessons = mutableListOf<Lesson>()
         set(value) {
@@ -23,9 +25,11 @@ class LessonsPagerAdapter(context: Context, private val callback: LessonsAdapter
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         LessonVH(
             LessonCardBinding.inflate(layoutInflater, parent, false).apply {
-                val lp = root.layoutParams
-                lp.height = MATCH_PARENT
-                root.layoutParams = lp
+                root.layoutParams = (root.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                    topMargin = 10.dp().toInt()
+                    bottomMargin = 10.dp().toInt()
+                    height = MATCH_PARENT
+                }
             }, callback
         )
 
@@ -35,5 +39,20 @@ class LessonsPagerAdapter(context: Context, private val callback: LessonsAdapter
 
     override fun getItemCount() = lessons.size
 
+    class LessonVH(private val binding: LessonCardBinding, private val callback: LessonsAdapterCallback) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(lesson: Lesson) {
+            with(binding) {
+                lessonName.text = lesson.name
+                lessonDescription.text = lesson.time()
+                lessonDescription.setCompoundDrawablesWithIntrinsicBounds(R.drawable.baseline_schedule_24, 0, 0, 0)
+                lessonDescription.compoundDrawablePadding = 5.dp().toInt()
+                skypeCall.setOnClickListener {
+                    callback.onSkypeClick(lesson)
+                }
+            }
+        }
+
+    }
 
 }

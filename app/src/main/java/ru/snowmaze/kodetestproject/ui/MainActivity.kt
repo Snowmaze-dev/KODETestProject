@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import com.fxn.BubbleTabBar
 import com.fxn.OnBubbleClickListener
 import ru.snowmaze.kodetestproject.R
-import ru.snowmaze.kodetestproject.ui.classes.LessonsFragment
 import ru.snowmaze.kodetestproject.ui.home.HomeFragment
+import ru.snowmaze.kodetestproject.ui.lessons.LessonsFragment
 
 class MainActivity : AppCompatActivity() {
 

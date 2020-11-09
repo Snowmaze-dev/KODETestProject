@@ -1,11 +1,11 @@
 package ru.snowmaze.data.repository.lessons
 
-import ru.snowmaze.domain.Lesson
+import ru.snowmaze.data.entity.lesson.LessonEntity
 
 interface LessonsSource {
 
-    suspend fun lessons(): List<Lesson>
+    suspend fun lessons(): List<LessonEntity>
 
-    suspend fun lesson(id: Int): Lesson?
+    suspend fun lesson(id: Int): LessonEntity?
 
 }

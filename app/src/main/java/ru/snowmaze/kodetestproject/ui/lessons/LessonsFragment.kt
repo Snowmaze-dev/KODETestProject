@@ -1,4 +1,4 @@
-package ru.snowmaze.kodetestproject.ui.classes
+package ru.snowmaze.kodetestproject.ui.lessons
 
 import android.os.Bundle
 import android.view.View

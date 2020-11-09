@@ -30,7 +30,9 @@ ext {
             "com.squareup.retrofit2:retrofit:$retrofit_version",
             "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.0",
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0",
-            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version"
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_version",
+            "com.squareup.okhttp3:okhttp:4.9.0",
+            "org.kodein.di:kodein-di-generic-jvm:$kodein_version",
     ]
 }
 

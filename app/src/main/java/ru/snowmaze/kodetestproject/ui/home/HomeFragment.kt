@@ -27,20 +27,22 @@ class HomeFragment : Fragment(R.layout.fragment_home), KodeinAware,
         val homeworkAdapter = HomeworkPagerAdapter(requireContext())
         with(binding) {
             timerView.timer = 5000
-            classes.adapter = classesAdapter
+            lessons.adapter = classesAdapter
             homework.adapter = homeworkAdapter
             homeViewModel.lessonsLiveData.observe(viewLifecycleOwner) { result ->
                 result.fold({
+                    lessonsProgressBar.visibility = View.GONE
                     classesAdapter.lessons = it.toMutableList()
                     classesToday.text = getString(R.string.lessons_today, it.size.toString())
                 }) {
                     showText(R.string.connection_failed)
                 }
             }
-        }
-        homeViewModel.homeworkLiveData.observe(viewLifecycleOwner) { result ->
-            result.onSuccess {
-                homeworkAdapter.homework = it.toMutableList()
+            homeViewModel.homeworkLiveData.observe(viewLifecycleOwner) { result ->
+                result.onSuccess {
+                    homeworkProgressBar.visibility = View.GONE
+                    homeworkAdapter.homework = it.toMutableList()
+                }
             }
         }
 
