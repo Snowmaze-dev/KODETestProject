@@ -1,8 +1,10 @@
 package ru.snowmaze.data.utils
 
+import ru.snowmaze.data.utils.DateHelper.today
 import ru.snowmaze.domain.Lesson
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 object DateHelper {
 
@@ -14,4 +16,6 @@ object DateHelper {
 
 }
 
-fun Lesson.time() = DateHelper.today.format(time) + " - " + DateHelper.today.format(time + duration)
+fun Lesson.time() = today.format(time) + " - " + today.format(time + TimeUnit.MINUTES.toMillis(
+    duration.toLong()
+))

@@ -8,11 +8,10 @@ class LessonMapper {
 
     fun mapFromEntity(lesson: LessonEntity) = Lesson(
         lesson.id, lesson.name, lesson.description,
-        lesson.teacher, DateHelper.today.parse(lesson.time).time, DateHelper.today.parse(lesson.duration).time.toInt()
-    )
+        lesson.teacher, DateHelper.today.parse(lesson.time).time, lesson.duration)
 
     fun mapToEntity(lesson: Lesson) = LessonEntity(lesson.id, lesson.name, lesson.description, lesson.teacher, DateHelper.today.format(
         Date(lesson.time)
-    ), DateHelper.today.format(Date(lesson.duration.toLong())))
+    ), lesson.duration)
 
 }
