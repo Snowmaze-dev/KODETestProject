@@ -5,7 +5,7 @@ import ru.snowmaze.data.entity.homework.HomeworkEntity
 
 interface HomeworkAPIService {
 
-    @GET("7093124f-38c9-4fce-8f2a-78a347482880")
+    @GET("get_homework.php")
     suspend fun getHomework(): List<HomeworkEntity>
 
 }

@@ -11,13 +11,13 @@ class HomeworkMapper(
 ) {
 
     suspend fun mapFromEntity(homework: HomeworkEntity) = Homework(
-        homework.id.toInt(),
-        lessonsRepository.lesson(homework.lessonId.toInt()) ?: throw IOException(),
+        homework.id,
+        lessonsRepository.lesson(homework.lessonId) ?: throw IOException("No lesson with this id"),
         DateHelper.dayFormat.parse(homework.expireTime).time,
         homework.task
     )
 
     suspend fun mapToEntity(homework: Homework) =
-        HomeworkEntity(homework.id.toString(), homework.lesson.id.toString(), DateHelper.dayFormat.format(Date(homework.expireTime)), homework.task)
+        HomeworkEntity(homework.id, homework.lesson.id, DateHelper.dayFormat.format(Date(homework.expireTime)), homework.task)
 
 }

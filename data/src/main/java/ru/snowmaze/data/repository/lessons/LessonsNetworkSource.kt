@@ -10,7 +10,8 @@ class LessonsNetworkSource(retrofit: Retrofit): LessonsSource {
     private val service = retrofit.create(LessonsAPIService::class.java)
 
     override suspend fun lesson(id: Int) = withContext(Dispatchers.IO) {
-        service.getLesson(id).getOrNull(0)
+        try { service.getLesson(id) }
+        catch(e: Exception) { null }
     }
 
     override suspend fun lessons() = withContext(Dispatchers.IO) {

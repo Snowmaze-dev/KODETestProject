@@ -22,7 +22,7 @@ import ru.snowmaze.data.repository.lessons.LessonsSourceProvider
 val dataModule = Kodein.Module("DataModule") {
     bind<Retrofit>() with singleton {
         val contentType = "application/json".toMediaType()
-        Retrofit.Builder().baseUrl("https://sheet.best/api/sheets/")
+        Retrofit.Builder().baseUrl("http://snowmaze.fvds.ru/kode/")
             .addConverterFactory(Json{
                 ignoreUnknownKeys = true
             }.asConverterFactory(contentType)).build()

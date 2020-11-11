@@ -1,16 +1,19 @@
 package ru.snowmaze.data
 
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.POST
 import ru.snowmaze.data.entity.lesson.LessonEntity
 
 interface LessonsAPIService {
 
-    @GET("6e82d28a-b094-4db0-88ca-1ca1d480a186")
+    @GET("get_lessons.php")
     suspend fun getLessons(): List<LessonEntity>
 
-    @GET("6e82d28a-b094-4db0-88ca-1ca1d480a186/id/{lesson_id}")
-    suspend fun getLesson(@Path(value = "lesson_id", encoded = true) id: Int): List<LessonEntity>
+    @FormUrlEncoded
+    @POST("get_lesson.php")
+    suspend fun getLesson(@Field("id") id: Int): LessonEntity
 
 
 }
