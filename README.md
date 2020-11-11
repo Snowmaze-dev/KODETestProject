@@ -1,5 +1,5 @@
 # KODETestProject
-ТЗ
+<h1 align="center">ТЗ</h1>
 
 ![App](https://raw.githubusercontent.com/Snowmaze-dev/KODETestProject/master/images/app.png)
 
