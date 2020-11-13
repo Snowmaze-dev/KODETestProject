@@ -2,6 +2,7 @@ package ru.snowmaze.data.repository.homework
 
 import kotlinx.coroutines.flow.flow
 import ru.snowmaze.data.entity.homework.HomeworkMapper
+import ru.snowmaze.data.utils.parallelMap
 import ru.snowmaze.domain.repository.HomeworkRepository
 import java.io.IOException
 
@@ -13,12 +14,11 @@ class HomeworkRepository(
     override fun homework() = flow {
         val homework = try {
             homeworkSourceProvider.homeworkSource().homework()
-        }
-        catch (e: IOException) {
+        } catch (e: IOException) {
             emit(Result.failure(e))
             return@flow
         }
-        emit(Result.success(homework.map {
+        emit(Result.success(homework.parallelMap {
             mapper.mapFromEntity(it)
         }))
     }
